@@ -46,11 +46,11 @@ router.post('/signin',(req,res)=>{
                     name : data.name,
                     role : data.role,
                 }, 'secret')
-                res.json({
-                    success : true,
-                    token,
-                })
-                // res.redirect('/home')
+                // res.json({
+                //     success : true,
+                //     token,
+                // })
+                res.redirect('/home');
             }
             else{
                 res.json(data);
@@ -59,15 +59,20 @@ router.post('/signin',(req,res)=>{
     });
 })
 
+router.get('/home',(req,res)=>{
+    const data = req.body;
+    res.render('home',data);
+})
+
 router.post('/signout', (req, res)=>{
     // req.session.destroy();
-    // res.clearCookie('connect.sid');
-    res.json({
-        error : false,
-        data : null,
-        message : 'sign out successful'
-    })
-    res.render('/')
+    res.clearCookie('connect.sid');
+    // res.json({
+    //     error : false,
+    //     data : null,
+    //     message : 'sign out successful'
+    // })
+    res.redirect('main')
 });
 
 module.exports = router;

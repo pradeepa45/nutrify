@@ -84,7 +84,7 @@ const isAdmin = function (res, req, next) {
         console.log("hello from ./index.js")
         req.sendStatus(401);
     }
-    next();
+    // next();
 }
 
 app.listen(3000, () => {

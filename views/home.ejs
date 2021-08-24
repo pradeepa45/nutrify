@@ -1,8 +1,23 @@
 <html>
-    <body>
-        <h1>Hello, <%= name %>! </h1>
-        <form method='POST' action='/bknd/auth/signout'>
-            <button type='submit'>Sign Out</button>
-        </form>
-    </body>
+<title>Nutrify</title>
+<link rel="stylesheet" type="text/css" href="https://semantic-ui.com/dist/semantic.min.css">
+<script src="https://code.jquery.com/jquery-3.1.1.min.js"
+    integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
+<script src="https://semantic-ui.com/dist/semantic.min.js"></script>
+
+<body>
+    <div class="ui menu">
+        <div class="item">
+            <h1>Hello, <%= name %>! </h1>
+        </div>
+        <div class="item">
+            <form class="ui form" method='POST' action='/bknd/auth/signout'>
+                <button type='submit' class="ui olive button">Sign Out</button>
+            </form>
+        </div>
+    </div>
+    
+</body>
+
 </html>
+<!-- https://semantic-ui.com/introduction/getting-started.html -->
